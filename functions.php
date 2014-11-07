@@ -11,18 +11,22 @@ function awp_before_all(){
 			case 'post':
 				if (isset( $_REQUEST['awp_value'] )) {
 					$value = abs(intval( $_REQUEST['awp_value'] ));
-					$data = get_post( $value, 'ARRAY_A' );
-					$data['meta'] = get_post_meta( $value );
+					$post = get_post( $value, 'ARRAY_A' );
+					if ($post) {
+						$data = $post;
+						$data['meta'] = get_post_meta( $value );
+					}
 				}
 				break;
 
 			case 'option':		
 				if (isset( $_REQUEST['awp_value'] )) {
-					$data = get_option( $_REQUEST['awp_value'] );
+					$data = array('value' => get_option( $_REQUEST['awp_value'] ));
 				}
 				break;
 		}
 
+		header('Content-Type: text/plain');
 		echo json_encode( $data );
 		exit;
 	}
