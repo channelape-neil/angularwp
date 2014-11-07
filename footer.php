@@ -15,7 +15,7 @@
 	// 
 	//  Initiate our AngularJS App
 	//
-	var app = angular.module('app', ['ui-router']);
+	var app = angular.module('app', ['ui.router']);
 </script>
 </body>
 </html>
