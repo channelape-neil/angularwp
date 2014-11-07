@@ -3,4 +3,5 @@ angularwp
 
 AngularJS + WordPress
 
-See license.txt
+License
+Creative Commons Attribution NonCommercial (CC-BY-NC)
